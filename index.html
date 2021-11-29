@@ -9,7 +9,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script defer>
-      document.getElementById("content").innerHTML = marked.parse("Some _Markdown_ content");
+      fetch("/markdown.md")
+        .then(response => response.blob())
+        .then(blob => blob.text())
+        .then(markdown => {
+          document.getElementById("content").innerHTML = marked.parse(markdown);
+        });
     </script>
   </body>
 </html>
