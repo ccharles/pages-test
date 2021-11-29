@@ -9,7 +9,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script defer>
-      fetch("/markdown.md")
+      fetch("/pages-test/markdown.md")
         .then(response => response.blob())
         .then(blob => blob.text())
         .then(markdown => {
